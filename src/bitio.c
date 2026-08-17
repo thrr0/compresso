@@ -40,7 +40,7 @@ void bitreader_init(BitReader *br, FILE *file){
     br->buffer = 0;
 }
 
-uint_fast8_t bitreader_read_bit(BitReader *br){
+uint8_t bitreader_read_bit(BitReader *br){
     if(br->bit_count == 8){
         br->buffer = fgetc(br->file);
         br->bit_count= 0;
