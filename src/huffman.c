@@ -88,6 +88,9 @@ static Node *build_huffman_tree(uint64_t freq[256]){
     }
   }
 
+  if(active_count == 0){
+    return NULL;
+  }
   while(active_count > 1){
     Node *a = find_smallest_node(active, &active_count);
     Node *b = find_smallest_node(active, &active_count);
@@ -215,7 +218,10 @@ void huffman_encode(FILE *in, FILE *out){
     table[i].length = 0;
   }
 
-  if(huffmanTree->left == NULL && huffmanTree->right == NULL){
+
+
+  if(huffmanTree == NULL){
+  } else if(huffmanTree->left == NULL && huffmanTree->right == NULL){
     // Single distinct symbol: no real tree to walk, force a 1-bit code.
     table[huffmanTree->symbol].code = 0;
     table[huffmanTree->symbol].length = 1;

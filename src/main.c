@@ -92,6 +92,7 @@ int main(int argc, char *argv[]) {
                 break;
             default:
                 fprintf(stderr, "Error parsing compression format");
+                return EXIT_FAILURE;
                 break;
         }
 
