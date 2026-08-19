@@ -4,3 +4,4 @@
 #include "bitio.h"
 
 void huffman_encode(FILE *in, FILE *out);
+void huffman_decode(FILE *in, FILE *out);

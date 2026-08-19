@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -g -fsanitize=address,undefined
 LDFLAGS = -fsanitize=address,undefined
 
-SRC = src/main.c src/bitio.c src/rle.c
+SRC = src/main.c src/bitio.c src/rle.c src/huffman.c
 OBJ = $(SRC:.c=.o)
 TARGET = compresso
 
